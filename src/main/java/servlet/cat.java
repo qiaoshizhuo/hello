@@ -15,6 +15,13 @@ public class cat {
     @Column(name = "c_name")
     private String c_name;
 
+    public cat(Integer c_id,String c_name) {
+        this.c_id=c_id;
+        this.c_name = c_name;
+    }
+    public cat() {
+
+    }
     @Override
     public String toString() {
         return "cat{" +

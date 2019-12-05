@@ -52,7 +52,7 @@ public class dao {
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
         CriteriaQuery<cat> query = criteriaBuilder.createQuery(cat.class);
         Root<cat> root = query.from(cat.class);
-        query.select(root).where(criteriaBuilder.equal(root.<String>get("u_name"), c_name));
+        query.select(root).where(criteriaBuilder.equal(root.<String>get("c_name"), c_name));
         Query<cat> query1 = session.createQuery(query);
         List<cat> cats = query1.list();
         //找到后删除
@@ -70,7 +70,7 @@ public class dao {
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
         CriteriaQuery<cat> query = criteriaBuilder.createQuery(cat.class);
         Root<cat> root = query.from(cat.class);
-        query.select(root).where(criteriaBuilder.equal(root.<String>get("u_name"),u_pro.getC_name()));
+        query.select(root).where(criteriaBuilder.equal(root.<String>get("c_name"),u_pro.getC_name()));
         Query<cat> query1 = session.createQuery(query);
         List<cat> cats = query1.list();
         for(cat cat:cats)
