@@ -14,7 +14,7 @@
 <body>
 <s:iterator value="cats">
     <s:property value="c_id"></s:property>
-    <s:property value="c_name"></s:property>
+    <s:property value="c_name"></s:property><br>
 </s:iterator>
 </body>
 </html>
