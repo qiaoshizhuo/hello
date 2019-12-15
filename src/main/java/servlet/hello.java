@@ -10,8 +10,14 @@ public class hello extends ActionSupport implements ModelDriven {
     private dao dao=new dao();
         private cat cat=new cat();
         public String select() throws Exception {
-
-            List<cat> cats= dao.select(cat.getC_name());
+            List<cat> cats=null;
+            if(cat==null||cat.getC_name()==null||"".equals(cat.getC_name()))
+            {
+                cats= dao.selectAll();
+            }
+            else {
+                cats = dao.select(cat.getC_name());
+            }
             //转发到actionContext
             ActionContext.getContext().put("cats",cats);
             return "select";

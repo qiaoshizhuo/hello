@@ -27,8 +27,6 @@ public class daoTest
         when(dao.select("m")).thenReturn(cats);
         List<cat> cats1=dao.select("m");
         Assert.assertSame(cats,cats1);
-
-
     }
     @Test
     public void testDeleteNUll() {
